@@ -1,0 +1,147 @@
+{{>head}}
+{{>navbar}}
+
+<!--  //add calender here
+<section class="container">
+  <form class="row">
+    <label for="date" class="col-1 col-form-label">Date</label>
+    <div class="col-5">
+      <div class="input-group date" id="datepicker">
+        <input type="text" class="form-control" id="date"/>
+        <span class="input-group-append">
+          <span class="input-group-text bg-light d-block">
+            <i class="fa fa-calendar"></i>
+          </span>
+        </span>
+      </div>
+    </div>
+  </form>
+</section>
+-->
+
+<div class=container>
+
+
+
+  
+<form class="row g-3 mt-5" action="/post_ride" method="post">
+  
+  <div class="col-md-6">
+    <label for="loc" class="form-label">Location</label>
+    <input type="text" class="form-control" id="loc" name="loc">
+  </div>
+  
+  <div class="col-md-6">
+    <label for="date" class="form-label">Date</label>
+    <input type="Date" class="form-control" id="date" name="date">
+  </div>
+
+ <div class="cs-form">
+<label for="time" class="form-label">Trip time</label>
+  <input type="time" class="form-control" value="10:05 AM" id="time" name="trip_t"/>
+</div>
+  <div class="col-md-6">
+    <label for="dep" class="form-label">Department</label>
+    <input type="text" class="form-control" id="dep" name="dep">
+  </div>
+
+  <div class="col-md-6">
+    <label for="primeclass" class="form-label">Prime class</label>
+    <input type="text" class="form-control" id="primeclass" name="p_class">
+  </div>
+<!--
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+  -->
+  
+  
+  <!--
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select">
+      <option selected>Choose...</option>
+      <option>...</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+-->
+
+
+<div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Direction: </h6>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dir" id="towards "
+                      value="tu" checked name="dir"/>
+                    <label class="form-check-label" for="towards">Towards university</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dir" id="from"
+                      value="fu" />
+                    <label class="form-check-label" for="from">From university</label>
+                  </div>
+
+                </div>
+
+
+
+
+
+
+
+  <div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Preferred Gender: </h6>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="femaleGender "
+                      value="female" checked />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                      value="male" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="otherGender"
+                      value="other" />
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
+
+                </div>
+  <!--
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  -->
+  
+
+  <div class="mt-4 pt-2">
+                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+    </div>
+</form>
+</div>
+
+
+
+
+{{>tail}}
