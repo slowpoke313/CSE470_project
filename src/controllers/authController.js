@@ -22,10 +22,11 @@ module.exports.register_post = async (req, res)=>{
                 email: req.body.email,
                 password: password ,
                 confirm_password: cpassword,
-                phone_no:req.body.phone_no
+                phone_no:req.body.phone_no,
+                gender: req.body.gender
             })
             const registered = await studentRegister.save();
-            res.status(201).render("index");
+            res.status(201).render("login");
 
 
             }else{
@@ -42,6 +43,7 @@ module.exports.register_post = async (req, res)=>{
 
 module.exports.login_get = (req, res) => {
     res.render("login");
+    console.log(req.session);
 }
 
 module.exports.login_post = async (req, res) => {  ///add form and use the name attribute for that
@@ -60,7 +62,9 @@ module.exports.login_post = async (req, res) => {  ///add form and use the name 
         if (user.password==password){
 
             req.session.userID = user._id;
+            const person = user._id;
             req.session.name = user.first_name;
+            res.render("user_dash",{person:person});
             res.redirect('/user_dash'); 
         }else{
             res.send("password are not matching");

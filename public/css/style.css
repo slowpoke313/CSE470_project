@@ -18,3 +18,32 @@
     .card-registration .select-arrow {
     top: 13px;
     }
+
+
+    .data_table {
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+        background: #efefef;
+        padding: 10px;
+        width: 300px;
+    }
+    .data_table dt, .data_table dd {
+        margin: 0;
+        margin-bottom: 2px;
+        display: inline;
+    }
+    .data_table dt {
+        padding-right: 8px;
+        
+    }
+    .data_table dd:after {
+        content: '';
+        display: block;
+    }
+    @media (max-width: 600px){
+        .data_table {
+            text-align: center;
+        }
+    }
+    

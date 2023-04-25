@@ -5,16 +5,19 @@ const tripController = require('../controllers/tripController');
 const router = Router();
 
 //add middlewares for restricting addpost, viewpost etc
-/*
-const redirectPosted = (req, res, next) => {
+
+const redirectLogin = (req, res, next) => {
     if (req.session.userID){
-        res.redirect('/posted');
-    } else {
         next();
+    } else {
+        
+        res.redirect('/login');
     }
 }
-*/
-router.get('/posted',tripController.trip_get);
-router.get('/view',tripController.view_get);
+
+router.get('/posted',redirectLogin ,tripController.trip_get);
+router.get('/view', redirectLogin,tripController.view_get);
+//mon10th
+//router.post('/select',tripController.sel_ride);
 
 module.exports = router;

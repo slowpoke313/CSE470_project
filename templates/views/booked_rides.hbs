@@ -1,0 +1,56 @@
+{{>head title="BookedRides"}}
+{{>navbar}}
+
+
+
+<center>
+  <p class="fw-light text">
+    <h2> Booked Rides</h2>  
+  </p>
+</center>
+
+
+
+    <div class="container">
+    <table class="table mt-5">
+
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Location</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Date</th>
+            <th scope="col">Direction</th>
+            <th scope="col">Time</th>
+            <th scope="col">Poster name</th>
+            <th scope="col">poster dep</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+
+  <tbody>
+    {{#each trips}}
+    <tr>
+      <th scope="row">{{@index_1}}</th>
+      <td>{{this.loc}}</td>
+      <td>{{this.gender}}</td>
+      <td>{{this.date}}</td>
+      <td>{{this.dir}}</td>
+      <td>{{this.trip_t}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.dept}}</td>
+      <td>{{this.phone}}</td>
+    
+
+    </tr>
+    {{/each}}
+  </tbody>
+
+
+  </table>
+
+
+    </div>
+
+
+{{>tail}}

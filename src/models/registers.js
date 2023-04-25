@@ -30,6 +30,10 @@ const studentScheme = new mongoose.Schema({
         type:Number,
         required:true,
         unique:true
+    },
+    gender:{
+        type:String,
+        required: true
     }
     })
 

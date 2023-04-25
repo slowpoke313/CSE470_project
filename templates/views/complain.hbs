@@ -1,19 +1,41 @@
-{{>head}}
+{{>head title="Lodge Complaint"}}
 {{>navbar}}
-<div class= container>
-<form>
-  <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3">
-    </div>
-  </div>
-  <div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword3">
-    </div>
-  </div>
+<div class="container" >
+<form class="row g-3 mt-5" action="/complain_post" method="post">
+
+
+<div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1 mt-5"><h3>Complaint Category:</h3> </h6>
+
+                  <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="comp" id="towards "
+                      value="Regarding Website" checked name="comp"/>
+                    <label class="form-check-label" for="towards"><h4>Regarding Website</h4></label>
+                  </div>
+
+                  <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="comp" id="from"
+                      value="Regarding User" />
+                    <label class="form-check-label" for="from"><h4>Regarding User</h4></label>
+                  </div>
+
+                  <div class="form-check mt-5">
+                    <input class="form-check-input" type="radio" name="comp" id="from"
+                      value="Miscellaneous" />
+                    <label class="form-check-label" for="from"><h4>Miscellaneous</h4></label>
+                  </div>
+
+</div>
+
+
+<div class="mb-3 mt-5">
+  <label for="exampleFormControlTextarea1" class="form-label"> <h3>Complaint Details </h3></label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="details"></textarea>
+</div>
+
+<!--
+
   <fieldset class="row mb-3">
     <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
     <div class="col-sm-10">
@@ -37,20 +59,13 @@
       </div>
     </div>
   </fieldset>
-  <div class="row mb-3">
-    <div class="col-sm-10 offset-sm-2">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-          Example checkbox
-        </label>
-      </div>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit Complaint</button>
-</form>
-</div>
 
+  -->
+  
+  <button type="submit" class="btn btn-primary mt-5">Submit Complaint</button>
+
+</div>
+</form>
 
 
 {{>tail}}

@@ -1,0 +1,19 @@
+{{>head}}
+{{>navbar}}
+
+<div class="container mt-5">
+<center>
+
+<p class="fw-bold"> Are you sure you want to <FONT COLOR="#FF0000">DELETE</FONT> the account? </p>
+
+
+
+<form action="/user_delete" method="post">   <!-- goes to the selected post pg and updates-->
+          <input type="hidden" name="selected_id" value="{{data._id}}"> 
+          <button class="btn btn-danger" type="submit" >Delete</button>
+</form>
+</center>
+
+
+</div>
+{{>tail}}

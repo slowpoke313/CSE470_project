@@ -11,6 +11,9 @@ require("./db/conn");
 
 const authRoutes = require("./router/auth");  //require the router
 const tripRoute =  require("./router/tripRoute");
+const view_tripRoute = require("./router/view_trip");
+const adminRoute = require("./router/adminRoute");
+const userRoute = require("./router/userRoute");
 
 const Trip = require("./models/trips");
 
@@ -47,61 +50,21 @@ app.use(session({
 hbs.registerPartials(partials_path);
 
 app.get("/",(req,res) => {
+    if(req.session.userID){
+        console.log('yes');
+    }else{
+        console.log("no");
+    }
     res.render("index")
 });
 
-//create a new user in the database
-
-
-//creating the trip database
-
-
-app.post("/post_ride",async (req, res) => {
-    try{
-            
-        const trips = new Trip({   //show a prompt that the email or password is
-            poster: req.session.userID,
-            name: req.session.name,                                   // not unique
-            trip_t: req.body.trip_t,
-            loc: req.body.loc,
-            p_class: req.body.p_class,
-            dir: req.body.dir,
-            gender:req.body.gender,
-            date:req.body.date,
-            dep:req.body.dep
-        })
-        const posted = await trips.save();
-        res.status(201).render("index");
-
-
-            
-            
-        //const registered = await Student.save();
-               //res.status(201).render(index);
-        
-         } catch(error){
-        res.status(400).send(error);
-    }
-}) 
-
-//printing the values from the student database
-/*
-app.get("/view", async (req,res)=>{
-    try{
-        const things = await Trip.find({});  //use schema name
-        res.render("view", {
-            things
-        });
-        console.log(things);
-    }catch(error){
-        res.status(400).send(error);
-    }
-})
-*/
 
 
 app.use(authRoutes);
 app.use(tripRoute);
+app.use(view_tripRoute);
+app.use(adminRoute);
+app.use(userRoute);
 
 
 
@@ -116,11 +79,20 @@ app.use(tripRoute);
 
 //create a new user in out db
 
-
+app.get("/admin_dash",(req,res)=>{
+    res.render("admin_dash");
+})
 
 
 app.get("/user_dash", (req, res) => {
     res.render("user_dash");
+}) 
+
+
+
+
+app.get("/select", (req, res) => {
+    res.render("select");
 }) 
 
 app.get("/complain", (req, res) => {
@@ -130,6 +102,8 @@ app.get("/complain", (req, res) => {
 app.get("/post_ride", (req, res) => {
     res.render("post_ride");
 })
+
+
 
 
 

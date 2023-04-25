@@ -1,19 +1,24 @@
-{{>head}}
+{{>head title="Dashboard"}}
 
 {{>navbar}}
 
-<h1> this is the user dashboard</h1>
 
+<div class="container mt-5">
+<p class="fw-light">
+  <h2>User Dashboard</h2>
+  
+  </p>
+</div
 
 <!--Main Navigation-->
 <header>
   <!-- Sidebar -->
- <div class=container>
+ <div class="container mt-5">
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
     <div class="position-sticky">
       <div class="list-group list-group-flush mx-3 mt-4">
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+        <a href="/editProfile" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Edit Profile</span>
         </a>
         <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
           <i class="fas fa-chart-area fa-fw me-3"></i><span>View Routine</span>
@@ -27,9 +32,15 @@
         <a href="/view" class="list-group-item list-group-item-action py-2 ripple"><i
         class="fas fa-lock fa-fw me-3"></i><span>View Rides</span></a>
 
+        <a href="/booked_rides" class="list-group-item list-group-item-action py-2 ripple"><i
+        class="fas fa-lock fa-fw me-3"></i><span>Booked Rides</span></a>
+
 
         <a href="/complain" class="list-group-item list-group-item-action py-2 ripple"><i
             class="fas fa-chart-line fa-fw me-3"></i><span>Lodge Complaint</span></a>
+
+        <a href="/user_delete" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-chart-line fa-fw me-3"></i><span>Delete Account</span></a>
         
       </div>
     </div>

@@ -1,0 +1,44 @@
+{{>head title="Details"}}
+
+{{>navbar}}
+
+
+
+<center>
+<p class="fw-light text mt-5">
+    <h2> Details of the Ride Selector</h2>
+  
+  </p>
+</center>
+<!--
+<h1 class="display-6">Display 6</h1>
+
+<h1> this is the details page {{person}} </h1>
+-->
+
+
+<div class="container">
+
+<dl class="row">
+  <dt class="col-sm-3 mt-5"> Name </dt>
+  <dd class="col-sm-9"> {{person.first_name}} {{person.last_name}}</dd>
+
+  <dt class="col-sm-3 mt-5">Contact Number</dt>
+  <dd class="col-sm-9"> {{person.phone_no}} </dd>
+
+  <dt class="col-sm-3 mt-5">Department</dt>
+  <dd class="col-sm-9"> {{person.department}} </dd>
+
+  <dt class="col-sm-3 mt-5">Gender</dt>
+  <dd class="col-sm-9"> {{person.gender}} </dd>
+
+  <dt class="col-sm-3 text-truncate mt-5">Email</dt>
+  <dd class="col-sm-9">{{person.email}}</dd>
+
+  
+</dl>
+
+</div>
+
+
+{{>tail}}

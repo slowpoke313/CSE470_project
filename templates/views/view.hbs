@@ -1,16 +1,16 @@
-{{>head}}
+{{>head title="View Trips"}}
 {{>navbar}}
-<h1> view page</h1>
-<!--
-<ul class="list-group"></ul>
-{{#each things ~}}
-    
-  <li class="list-group-item" >{{~loc}}</li>
 
-    
-{{~/each}}
-</ul>
--->
+
+
+<center>
+  <p class="fw-light text">
+    <h2> View Trips</h2>
+  
+  </p>
+</center>
+
+
 
 
 <div class="container">
@@ -25,12 +25,16 @@
       <th scope="col">Time</th>
       <th scope="col">Department</th>
       <th scope="col">selected</th>
+      <th scope="col">action</th>
+
+      
+      
     </tr>
   </thead>
   <tbody>
     {{#each all_trip}}
     <tr>
-      <th scope="row">{{@index_1}}</th>
+      <th scope="row">{{@index}}</th>
       <td>{{this.loc}}</td>
       <td>{{this.gender}}</td>
       <td>{{this.date}}</td>
@@ -38,6 +42,21 @@
       <td>{{this.trip_t}}</td>
       <td>{{this.dep}}</td>
       <td>{{this.selected}}</td>
+    <td>
+      {{#if this.selected}}
+      <form action="/selected_post" method="post">
+          <input type="hidden" name="selected_id" value="{{this._id}}"> 
+          <button class="btn btn-success" type="submit" disabled >select</button>
+      </form>
+      {{else}}
+        <form action="/selected_post" method="post">   <!-- goes to the selected post pg and updates-->
+          <input type="hidden" name="selected_id" value="{{this._id}}"> 
+          <button class="btn btn-success" type="submit" >select</button>
+        </form>
+      {{/if}}
+      
+    </td>
+
     </tr>
     {{/each}}
   </tbody>
